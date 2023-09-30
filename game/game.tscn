@@ -1,16 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxuub3p660iyr"]
 
-[ext_resource type="PackedScene" uid="uid://dlc3t3xbvj0qs" path="res://objects/dino/dinosaur.tscn" id="1_baipn"]
+[ext_resource type="PackedScene" uid="uid://dlc3t3xbvj0qs" path="res://objects/dino/dinosaur.tscn" id="1_eaiy3"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rrjwl"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rrjwl")
 
-[node name="Dinosaur" parent="." instance=ExtResource("1_baipn")]
-position = Vector2(556, 291)
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
+
+[node name="Dinosaur" parent="." instance=ExtResource("1_eaiy3")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

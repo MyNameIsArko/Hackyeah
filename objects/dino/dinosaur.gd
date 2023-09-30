@@ -9,6 +9,8 @@ var food_param: float = 100.0
 func feed(food_index) -> void:
 	
 	food_param += food_index
+	if food_param >= 100.0:
+		food_param = 100.0
 	
 func be_hungry(hunger_index = 1.0) -> void:
 	

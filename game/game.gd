@@ -11,6 +11,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("feed"):
 		dinosaur.feed(10)
 		print("Thank you!")
+		dinosaur.food_status()
 
 func _on_timer_timeout():
 	print("ping")

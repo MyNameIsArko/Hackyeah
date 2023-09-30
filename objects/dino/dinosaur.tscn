@@ -1,18 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlc3t3xbvj0qs"]
 
-[ext_resource type="Texture2D" uid="uid://b88awvxgydped" path="res://assets/placeholder-dino.png" id="1_sgi1c"]
-[ext_resource type="Script" path="res://objects/dino/dinosaur.gd" id="1_yd0qf"]
+[ext_resource type="Script" path="res://objects/dino/dinosaur.gd" id="1_cxywc"]
+[ext_resource type="Texture2D" uid="uid://b88awvxgydped" path="res://assets/placeholder-dino.png" id="1_gkkff"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jswva"]
-size = Vector2(28, 47)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67gna"]
 
 [node name="Dinosaur" type="CharacterBody2D"]
-script = ExtResource("1_yd0qf")
+script = ExtResource("1_cxywc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite-dafault" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_sgi1c")
+texture = ExtResource("1_gkkff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 4.5)
-shape = SubResource("RectangleShape2D_jswva")
+shape = SubResource("RectangleShape2D_67gna")

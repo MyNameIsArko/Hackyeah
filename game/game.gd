@@ -19,6 +19,10 @@ func _process(delta):
 	emit_signal("dino_params", dinosaur.get_signals())
 
 func _on_timer_timeout():
-	print("ping")
 	dinosaur.be_hungry()
 	dinosaur.food_status()
+	dinosaur.be_tired()
+	dinosaur.be_bored()
+
+func _on_dino_params(arg1):
+	pass

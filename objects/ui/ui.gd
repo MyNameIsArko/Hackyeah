@@ -35,4 +35,6 @@ func _on_input_text_submitted(new_text):
 	
 	
 func _on_game_dino_params(arg1):
-	pass #TODO: Add function to process received signals (signals are working, we are receiving them)
+	$HBoxContainer/Stat.percentage = arg1['food_param'] / 100.0
+	$HBoxContainer/Stat2.percentage = arg1['sleep_param'] / 100.0
+	$HBoxContainer/Stat3.percentage = arg1['fun_param'] / 100.0

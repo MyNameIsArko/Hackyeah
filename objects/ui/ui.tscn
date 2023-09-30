@@ -25,7 +25,6 @@ offset_top = 80.0
 offset_bottom = 208.0
 grow_horizontal = 2
 alignment = 1
-metadata/_edit_group_ = true
 
 [node name="VSeparator3" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2

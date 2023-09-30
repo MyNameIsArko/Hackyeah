@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bllips5bscwod"]
+
+[ext_resource type="Script" path="res://objects/ui/stat.gd" id="1_dxauh"]
+[ext_resource type="Texture2D" uid="uid://mlnhulbdrme1" path="res://icon.svg" id="2_vot65"]
+
+[node name="Stat" type="TextureRect"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_vot65")
+script = ExtResource("1_dxauh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 256.0
+rotation = 3.14159
+color = Color(1, 1, 1, 0.431373)

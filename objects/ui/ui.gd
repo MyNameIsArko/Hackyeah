@@ -14,6 +14,7 @@ func ask_chatbot(text):
 func _ready():
 	$HTTPRequest.request_completed.connect(_on_request_completed)
 	ask_chatbot("I want you to act as a dinosaur in the childs game. They can take care of you. You need to get into this role very seriously. You can only answer very simple")
+	set_process(true)
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -32,3 +33,6 @@ func _on_input_text_submitted(new_text):
 	past_user_inputs.append(new_text)
 	$Input.clear()
 	
+	
+func _on_game_dino_params(arg1):
+	pass #TODO: Add function to process received signals (signals are working, we are receiving them)

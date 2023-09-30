@@ -39,3 +39,13 @@ func regenerate_sleep() -> void:
 
 func sleep_status() -> int:
 	return 0
+
+func get_signals() -> Dictionary:
+	
+	var params_dict = {
+		"food_param" = food_param,
+		"sleep_param" = sleep_param
+		}
+	
+	return params_dict
+	

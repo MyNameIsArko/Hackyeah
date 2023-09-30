@@ -5,6 +5,8 @@ var food_param: float = 100.0
 var sleep_param: float = 100.0
 var fun_param: float = 100.0
 
+const SLEEP_HOURS_RECOVERY = 2
+
 func feed(food_index) -> void:
 	
 	food_param += food_index

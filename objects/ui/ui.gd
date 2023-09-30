@@ -1,5 +1,14 @@
 extends Control
 
+enum GameState {
+	IDLE,
+	FEEDING,
+	SLEEPING,
+	PLAYING
+}
+
+var state = GameState.IDLE
+
 var past_user_inputs = []
 var generated_responses = []
 var endpoint_url = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-large"
@@ -42,4 +51,10 @@ func _on_game_dino_params(arg1):
 
 
 func _on_texture_button_button_down():
+	state = GameState.FEEDING
 	$AnimationPlayer.play("slide_in")
+	
+func feeding():
+	if state == GameState.FEEDING:
+		print("Ready")
+		

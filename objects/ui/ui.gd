@@ -42,4 +42,4 @@ func _on_game_dino_params(arg1):
 
 
 func _on_texture_button_button_down():
-	$FridgeContainer/AnimationPlayer.play("slide_in")
+	$AnimationPlayer.play("slide_in")

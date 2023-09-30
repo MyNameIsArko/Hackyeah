@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxuub3p660iyr"]
 
-[ext_resource type="PackedScene" uid="uid://dlc3t3xbvj0qs" path="res://dino/dinosaur.tscn" id="1_baipn"]
+[ext_resource type="PackedScene" uid="uid://dlc3t3xbvj0qs" path="res://objects/dino/dinosaur.tscn" id="1_baipn"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rrjwl"]
 
 [node name="Game" type="Node2D"]

@@ -42,4 +42,8 @@ func _on_game_dino_params(arg1):
 
 
 func _on_texture_button_button_down():
-	$AnimationPlayer.play("slide_in")
+	$AnimationPlayer.play("food_slide_in")
+
+
+func _on_cancel_button_button_down():
+	$AnimationPlayer.play("food_slide_in", -1, -1, true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d28ej5gp5ufcj"]
+[gd_scene load_steps=11 format=3 uid="uid://d28ej5gp5ufcj"]
 
 [ext_resource type="Script" path="res://objects/ui/ui.gd" id="1_2o0wl"]
 [ext_resource type="Texture2D" uid="uid://mlnhulbdrme1" path="res://icon.svg" id="1_34t7l"]
@@ -58,10 +58,131 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../HBoxContainer2:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 128)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 128)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CancelButton:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../MiniGameContainer:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-800, 1112)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../MiniGameContainer:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 128)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../PlayContainer:size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(720, 128)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../PlayContainer:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-800, 1112)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../PlayContainer:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../MiniGameContainer:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ns6ge"]
-resource_name = "slide_in"
+resource_name = "food_slide_in"
 length = 0.3
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,11 +219,167 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CancelButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_4m7px"]
+resource_name = "play_slide_in"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../HBoxContainer2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HBoxContainer2/TextureButton:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CancelButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../PlayContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-800, 1112), Vector2(0, 1112)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../PlayContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_wuihq"]
+resource_name = "minigame_slide_in"
+length = 0.3
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../HBoxContainer2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HBoxContainer2/TextureButton:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CancelButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../MiniGameContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-800, 1112), Vector2(0, 1112)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../MiniGameContainer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m53ri"]
 _data = {
 "RESET": SubResource("Animation_5ot62"),
-"slide_in": SubResource("Animation_ns6ge")
+"food_slide_in": SubResource("Animation_ns6ge"),
+"minigame_slide_in": SubResource("Animation_wuihq"),
+"play_slide_in": SubResource("Animation_4m7px")
 }
 
 [node name="UI" type="Control"]
@@ -171,6 +448,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 editable = false
+caret_blink = true
+caret_blink_interval = 0.5
 
 [node name="Conversation" type="Label" parent="."]
 layout_mode = 0
@@ -226,12 +505,100 @@ size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../FridgeContainer")
+root_node = NodePath("../FoodContainer")
+autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_m53ri")
 }
 
-[node name="FridgeContainer" type="HBoxContainer" parent="."]
+[node name="FoodContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = -800.0
+offset_top = 1112.0
+offset_right = -80.0
+offset_bottom = 1240.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="VSeparator4" type="VSeparator" parent="FoodContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="LeftButton" type="TextureButton" parent="FoodContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator3" type="VSeparator" parent="FoodContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="MidButton" type="TextureButton" parent="FoodContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator2" type="VSeparator" parent="FoodContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="RightButton" type="TextureButton" parent="FoodContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator" type="VSeparator" parent="FoodContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="MiniGameContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = -800.0
+offset_top = 1112.0
+offset_right = -80.0
+offset_bottom = 1240.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="VSeparator4" type="VSeparator" parent="MiniGameContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="LeftButton" type="TextureButton" parent="MiniGameContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator3" type="VSeparator" parent="MiniGameContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="MidButton" type="TextureButton" parent="MiniGameContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator2" type="VSeparator" parent="MiniGameContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="RightButton" type="TextureButton" parent="MiniGameContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator" type="VSeparator" parent="MiniGameContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="PlayContainer" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -245,37 +612,48 @@ grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_group_ = true
 
-[node name="VSeparator4" type="VSeparator" parent="FridgeContainer"]
+[node name="VSeparator4" type="VSeparator" parent="PlayContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
 
-[node name="LeftButton" type="TextureButton" parent="FridgeContainer"]
+[node name="LeftButton" type="TextureButton" parent="PlayContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_34t7l")
 
-[node name="VSeparator3" type="VSeparator" parent="FridgeContainer"]
+[node name="VSeparator3" type="VSeparator" parent="PlayContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
 
-[node name="MidButton" type="TextureButton" parent="FridgeContainer"]
+[node name="MidButton" type="TextureButton" parent="PlayContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_34t7l")
 
-[node name="VSeparator2" type="VSeparator" parent="FridgeContainer"]
+[node name="VSeparator2" type="VSeparator" parent="PlayContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
 
-[node name="RightButton" type="TextureButton" parent="FridgeContainer"]
+[node name="RightButton" type="TextureButton" parent="PlayContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_34t7l")
 
-[node name="VSeparator" type="VSeparator" parent="FridgeContainer"]
+[node name="VSeparator" type="VSeparator" parent="PlayContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="CancelButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="text_submitted" from="Input" to="." method="_on_input_text_submitted"]
 [connection signal="button_down" from="HBoxContainer2/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="CancelButton" to="." method="_on_cancel_button_button_down"]

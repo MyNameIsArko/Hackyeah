@@ -656,4 +656,6 @@ grow_vertical = 2
 
 [connection signal="text_submitted" from="Input" to="." method="_on_input_text_submitted"]
 [connection signal="button_down" from="HBoxContainer2/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="HBoxContainer2/TextureButton3" to="." method="_on_texture_button_3_button_down"]
+[connection signal="button_down" from="HBoxContainer2/TextureButton2" to="." method="_on_texture_button_2_button_down"]
 [connection signal="button_down" from="CancelButton" to="." method="_on_cancel_button_button_down"]

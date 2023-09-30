@@ -47,3 +47,11 @@ func _on_texture_button_button_down():
 
 func _on_cancel_button_button_down():
 	$AnimationPlayer.play("food_slide_in", -1, -1, true)
+
+
+func _on_texture_button_3_button_down():
+	$AnimationPlayer.play("play_slide_in")
+
+
+func _on_texture_button_2_button_down():
+	$AnimationPlayer.play("minigame_slide_in")

@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://d28ej5gp5ufcj"]
+
+[ext_resource type="Script" path="res://objects/ui/ui.gd" id="1_2o0wl"]
+[ext_resource type="Texture2D" uid="uid://mlnhulbdrme1" path="res://icon.svg" id="1_34t7l"]
+[ext_resource type="PackedScene" uid="uid://bllips5bscwod" path="res://objects/ui/stat.tscn" id="1_qv740"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bun36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo1x3"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2o0wl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 80.0
+offset_bottom = 208.0
+grow_horizontal = 2
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bun36")
+
+[node name="Stat" parent="HBoxContainer" instance=ExtResource("1_qv740")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bun36")
+
+[node name="Stat2" parent="HBoxContainer" instance=ExtResource("1_qv740")]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bun36")
+
+[node name="Stat3" parent="HBoxContainer" instance=ExtResource("1_qv740")]
+layout_mode = 2
+
+[node name="VSeparator4" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bun36")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Input" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -296.0
+offset_right = 264.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+editable = false
+
+[node name="Conversation" type="Label" parent="."]
+layout_mode = 0
+offset_top = 288.0
+offset_right = 720.0
+offset_bottom = 360.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="VSeparator4" type="VSeparator" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("1_34t7l")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jo1x3")
+
+[connection signal="text_submitted" from="Input" to="." method="_on_input_text_submitted"]

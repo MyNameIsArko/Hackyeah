@@ -15,6 +15,7 @@ func _ready():
 	$HTTPRequest.request_completed.connect(_on_request_completed)
 	ask_chatbot("I want you to act as a dinosaur in the childs game. They can take care of you. You need to get into this role very seriously. You can only answer very simple")
 	set_process(true)
+	$HBoxContainer2.visible = true
 
 
 func _on_request_completed(result, response_code, headers, body):
@@ -38,3 +39,7 @@ func _on_game_dino_params(arg1):
 	$HBoxContainer/Stat.percentage = arg1['food_param'] / 100.0
 	$HBoxContainer/Stat2.percentage = arg1['sleep_param'] / 100.0
 	$HBoxContainer/Stat3.percentage = arg1['fun_param'] / 100.0
+
+
+func _on_texture_button_button_down():
+	$FridgeContainer/AnimationPlayer.play("slide_in")

@@ -11,7 +11,8 @@ wait_time = 60.0
 autostart = true
 
 [node name="Dinosaur" parent="." instance=ExtResource("1_eaiy3")]
-position = Vector2(397, 355)
+position = Vector2(352, 648)
+scale = Vector2(10, 10)
 
 [connection signal="dino_params" from="." to="." method="_on_dino_params"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

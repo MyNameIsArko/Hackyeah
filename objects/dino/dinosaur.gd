@@ -5,6 +5,7 @@ extends CharacterBody2D
 #food_param - is the dino hungry? How much?
 
 var food_param: float = 100.0
+var sleep_param: float = 100.0
 
 func feed(food_index) -> void:
 	
@@ -32,3 +33,9 @@ func food_status() -> int:
 		return 1
 	else:
 		return 0
+		
+func regenerate_sleep() -> void:
+	pass
+
+func sleep_status() -> int:
+	return 0

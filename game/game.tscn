@@ -10,5 +10,6 @@ script = ExtResource("1_rrjwl")
 autostart = true
 
 [node name="Dinosaur" parent="." instance=ExtResource("1_eaiy3")]
+position = Vector2(397, 355)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

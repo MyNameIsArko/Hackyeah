@@ -15,7 +15,10 @@ func be_hungry(hunger_index = 1.0) -> void:
 	if food_param > 0:
 		food_param -= hunger_index
 	
-func status() -> int:
+	if food_param >= 100:
+		food_param = 100
+	
+func food_status() -> int:
 	
 	print("Food_param: ", food_param)
 	

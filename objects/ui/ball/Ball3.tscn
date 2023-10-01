@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxc1s7m33v74d"]
+
+[ext_resource type="Texture2D" uid="uid://2fkfg0ni7acd" path="res://sprites/ball3.png" id="1_mop4i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6oc5w"]
+radius = 82.0
+
+[node name="Ball" type="RigidBody2D"]
+gravity_scale = 0.0
+freeze_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mop4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6oc5w")

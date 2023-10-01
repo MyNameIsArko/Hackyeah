@@ -11,7 +11,7 @@ func _process(delta):
 
 func _on_button_down():
 	object_present = true
-	ball_item = load("res://objects/ui/ball/Ball1.tscn").instantiate()
+	ball_item = load("res://objects/ui/ball/Ball2.tscn").instantiate()
 	ball_item.global_position = get_global_mouse_position()
 	get_tree().get_root().add_child(ball_item)
 

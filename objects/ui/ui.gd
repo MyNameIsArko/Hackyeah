@@ -94,3 +94,7 @@ func _on_cancel_button_button_down():
 		GameState.FEEDING:
 			$AnimationPlayer.play("food_slide_in", -1, -1, true)
 	state = GameState.IDLE
+
+
+func _on_button_up():
+	pass # Replace with function body.

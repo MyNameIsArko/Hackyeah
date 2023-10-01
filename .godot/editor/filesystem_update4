@@ -1,22 +1,21 @@
-res://objects/ui/ui.tscn
-res://objects/ui/food_objects/LeftButton.gd
-res://objects/ui/food_objects/food_item_left.gd
-res://levels/level.tscn
 res://game/game.tscn
 res://objects/dino/dinosaur.tscn
+res://levels/level.tscn
+res://objects/ui/ui.tscn
 res://objects/ui/food_objects/food_item_left.tscn
-res://game/game.gd
-res://objects/dino/dinosaur.gd
-res://objects/ui/food_objects/food_item_mid.gd
 res://objects/ui/food_objects/food_item_mid.tscn
-res://objects/ui/food_objects/food_item_right.gd
 res://objects/ui/food_objects/food_item_right.tscn
-res://objects/ui/food_objects/MidButton.gd
-res://objects/ui/food_objects/RightButton.gd
+res://objects/dino/dinosaur.gd
 res://objects/ui/ui.gd
-<<<<<<< HEAD
+res://game/game.gd
 res://objects/ui/ball/node_2d.tscn
 res://objects/ui/ball/LeftButton.gd
-=======
-res://game/game.gd
->>>>>>> c242372f4b5842ef435ce7752a5daa63887db01e
+res://objects/ui/food_objects/LeftButton.gd
+res://objects/ui/ball/Ball1.tscn
+res://objects/ui/ball/Ball2.tscn
+res://objects/ui/ball/Ball3.tscn
+res://objects/ui/MidButton.gd
+res://objects/ui/RightButton.gd
+res://objects/ui/food_objects/MidButton.gd
+res://objects/ui/food_objects/RightButton.gd
+res://objects/ui/ball/Ball3.gd

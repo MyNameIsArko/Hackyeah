@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwngl8o7wujfd"]
+
+[ext_resource type="Script" path="res://objects/ui/food_objects/food_item_left.gd" id="1_jvppk"]
+[ext_resource type="Texture2D" uid="uid://mlnhulbdrme1" path="res://icon.svg" id="2_ddfvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi6ar"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_jvppk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ddfvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xi6ar")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

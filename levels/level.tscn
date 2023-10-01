@@ -7,8 +7,8 @@
 [node name="Level" type="Node"]
 script = ExtResource("1_wtj2w")
 
-[node name="Game" parent="." instance=ExtResource("1_kapkj")]
-
 [node name="UI" parent="." instance=ExtResource("2_28gtn")]
+
+[node name="Game" parent="." instance=ExtResource("1_kapkj")]
 
 [connection signal="dino_params" from="Game" to="UI" method="_on_game_dino_params"]

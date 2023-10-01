@@ -13,6 +13,8 @@ func feed(food_index) -> void:
 	food_param += food_index
 	if food_param >= 100.0:
 		food_param = 100.0
+		
+	$EatAudio.play()
 	
 func be_hungry(hunger_index = 1.0) -> void:
 	
@@ -53,12 +55,7 @@ func food_status() -> int:
 		return 1
 	else:
 		return 0
-		
-func regenerate_sleep() -> void:
-	pass
 
-func sleep_status() -> int:
-	return 0
 
 func get_signals() -> Dictionary:
 	
@@ -75,8 +72,11 @@ func _process(_delta):
 		return
 	if is_mouse_tracked and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		$AnimatedSprite2D.play("pat")
+		if not $PatAudio.playing:
+			$PatAudio.play()
 	else:
 		$AnimatedSprite2D.play("idle")
+		$PatAudio.stop()
 
 
 func _on_mouse_entered():

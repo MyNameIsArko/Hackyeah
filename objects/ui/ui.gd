@@ -15,8 +15,12 @@ var endpoint_url = "https://api-inference.huggingface.co/models/microsoft/DialoG
 var headers = ["Authorization: Bearer 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"]
 var is_initial_prompt = true
 
+var last_prompt = ""
+
 func ask_chatbot(text):
 	var data = JSON.stringify({"inputs": {"text": text, "past_user_inputs": past_user_inputs, "generated_responses": generated_responses}})
+	last_prompt = text
+	$Input.editable = false
 	$HTTPRequest.request(endpoint_url, headers, HTTPClient.METHOD_POST, data)
 
 # Called when the node enters the scene tree for the first time.
@@ -29,13 +33,17 @@ func _ready():
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
+	if 'error' in json:
+		ask_chatbot(last_prompt)
+		return
 	var chat_text = json['generated_text']
 	generated_responses.append(chat_text)
+	$Input.editable = true
 	if is_initial_prompt:
-		is_initial_prompt = false
-		$Input.editable = true
+		is_initial_prompt = false		
 		return
 	$Conversation.text = chat_text
+	$Conversation/TalkingAudio.play()
 
 
 func _on_input_text_submitted(new_text):
@@ -53,16 +61,19 @@ func _on_game_dino_params(arg1):
 func _on_texture_button_button_down():
 	state = GameState.FEEDING
 	$AnimationPlayer.play("food_slide_in")
+	$HBoxContainer2/FoodButton/ButtonAudio.play()
 
 
 func _on_texture_button_3_button_down():
 	state = GameState.PLAYING
 	$AnimationPlayer.play("play_slide_in")
+	$HBoxContainer2/PlayButton/ButtonAudio.play()
 
 
 func _on_texture_button_2_button_down():
 	state = GameState.MINIGAME
 	$AnimationPlayer.play("minigame_slide_in")
+	$HBoxContainer2/MinigameButton/ButtonAudio.play()
 
 
 func _on_cancel_button_button_down():

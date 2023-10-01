@@ -7,3 +7,4 @@ res://objects/ui/food_objects/food_item_mid.tscn
 res://objects/ui/food_objects/food_item_right.tscn
 res://objects/dino/dinosaur.gd
 res://objects/ui/ui.gd
+res://game/game.gd

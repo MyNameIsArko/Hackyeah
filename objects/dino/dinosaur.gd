@@ -93,7 +93,6 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	is_mouse_tracked = false
 
-
 func _on_animated_sprite_2d_animation_finished():
 	if is_eating:
 		is_eating = false

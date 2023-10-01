@@ -4,6 +4,7 @@ extends TextureButton
 
 var ball_item
 var object_present: bool = false
+var rng = RandomNumberGenerator.new()
 
 
 func _process(delta):
@@ -14,8 +15,10 @@ func _process(delta):
 func _on_button_down():
 	object_present = true
 	ball_item = load("res://objects/ui/ball/node_2d.tscn").instantiate()
-	add_child(ball_item)
+	get_tree().get_root().add_child(ball_item)
 
 func _on_button_up():
 	object_present = false
-	ball_item.queue_free()
+	var x = rng.randf_range(0, 1.0)
+	var y = rng.randf_range(0, 1.0)
+	ball_item.apply_impulse(Vector2(x, y))

@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://b81bhnrx5sh0h"]
+[gd_scene load_steps=4 format=3 uid="uid://b81bhnrx5sh0h"]
 
 [ext_resource type="Texture2D" uid="uid://c272mfk38dmww" path="res://sprites/ball1.png" id="1_5jfyh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_47mwq"]
+bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6oc5w"]
 radius = 82.0
 
-[node name="Ball1" type="Node2D"]
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_47mwq")
+gravity_scale = 0.0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6oc5w")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5jfyh")

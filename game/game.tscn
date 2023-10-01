@@ -16,6 +16,7 @@ size = Vector2(1296, 20)
 script = ExtResource("1_rrjwl")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
 autostart = true
 
 [node name="Dinosaur" parent="." instance=ExtResource("1_eaiy3")]
@@ -50,6 +51,4 @@ position = Vector2(-360, 88)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_r6cuc")
 
-[connection signal="dino_params" from="." to="." method="_on_dino_params"]
-[connection signal="dino_params" from="." to="Dinosaur" method="_on_game_dino_params"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var is_mouse_tracked = false
 
 var food_param: float = 100.0
 var sleep_param: float = 100.0
@@ -30,6 +31,8 @@ func be_bored(boring_index = 1.0) -> void:
 	
 	if sleep_param > 0:
 		fun_param -= boring_index
+	else:
+		$AnimatedSprite2D.play("sleep")
 		
 func have_fun(fun_index = 1.0) -> void:
 	
@@ -67,3 +70,18 @@ func get_signals() -> Dictionary:
 	
 	return params_dict
 	
+func _process(_delta):
+	if sleep_param <= 0:
+		return
+	if is_mouse_tracked and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		$AnimatedSprite2D.play("pat")
+	else:
+		$AnimatedSprite2D.play("idle")
+
+
+func _on_mouse_entered():
+	is_mouse_tracked = true
+
+
+func _on_mouse_exited():
+	is_mouse_tracked = false

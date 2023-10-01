@@ -3,7 +3,6 @@ extends Control
 enum GameState {
 	IDLE,
 	FEEDING,
-	SLEEPING,
 	PLAYING,
 	MINIGAME
 }

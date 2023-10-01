@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxuub3p660iyr"]
+[gd_scene load_steps=6 format=3 uid="uid://bxuub3p660iyr"]
 
 [ext_resource type="PackedScene" uid="uid://dlc3t3xbvj0qs" path="res://objects/dino/dinosaur.tscn" id="1_eaiy3"]
 [ext_resource type="Script" path="res://game/game.gd" id="1_rrjwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogvqq"]
+size = Vector2(770, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csxq8"]
+size = Vector2(770, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6cuc"]
+size = Vector2(1296, 20)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_rrjwl")
@@ -11,8 +20,36 @@ wait_time = 60.0
 autostart = true
 
 [node name="Dinosaur" parent="." instance=ExtResource("1_eaiy3")]
-position = Vector2(352, 648)
-scale = Vector2(10, 10)
+position = Vector2(384, 362)
+scale = Vector2(0.5, 0.5)
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(352, 0)
+shape = SubResource("RectangleShape2D_ogvqq")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(352, 1288)
+shape = SubResource("RectangleShape2D_csxq8")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(360, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+position = Vector2(352, 88)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_r6cuc")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(360, 560)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+position = Vector2(-360, 88)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_r6cuc")
 
 [connection signal="dino_params" from="." to="." method="_on_dino_params"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

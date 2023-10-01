@@ -17,6 +17,7 @@ func _ready():
 		
 	var file = FileAccess.open(time_file, FileAccess.READ)
 	var last_time = file.get_var()
+	var energy = file.get_var()
 	file.close()
 	
 	var current_time = Time.get_datetime_dict_from_system()
@@ -45,7 +46,7 @@ func _ready():
 		hours_difference += value
 		
 	
-	dinosaur.sleep_param = min(0, max(100, hours_difference - dinosaur.SLEEP_HOURS_RECOVERY))
+	dinosaur.sleep_param = energy + min(0, max(100, hours_difference - dinosaur.SLEEP_HOURS_RECOVERY))
 
 	
 func _process(delta):
@@ -64,4 +65,5 @@ func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST || what == NOTIFICATION_WM_GO_BACK_REQUEST:
 		var file = FileAccess.open(time_file, FileAccess.WRITE)
 		file.store_var(Time.get_datetime_dict_from_system())
+		file.store_var(dinosaur.sleep_param)
 		file.close()

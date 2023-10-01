@@ -10,10 +10,11 @@ texture = ExtResource("2_vot65")
 script = ExtResource("1_dxauh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 0, 1)
 layout_mode = 0
 offset_left = 128.0
 offset_top = 128.0
 offset_right = 256.0
 offset_bottom = 256.0
 rotation = 3.14159
-color = Color(1, 1, 1, 0.431373)
+color = Color(1, 1, 1, 0.270588)

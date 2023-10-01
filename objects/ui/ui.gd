@@ -8,6 +8,7 @@ enum GameState {
 }
 
 var state = GameState.IDLE
+var energy_level = 100
 
 signal game_state(arg1)
 
@@ -20,6 +21,8 @@ var is_initial_prompt = true
 var last_prompt = ""
 
 func ask_chatbot(text):
+	if energy_level <= 0:
+		return
 	var data = JSON.stringify({
 		"inputs": {"text": text, "past_user_inputs": past_user_inputs, "generated_responses": generated_responses},
 		"options": {"wait_for_model": true}
@@ -61,6 +64,7 @@ func _on_game_dino_params(arg1):
 	$HBoxContainer/Food.percentage = arg1['food_param'] / 100.0
 	$HBoxContainer/Sleep.percentage = arg1['sleep_param'] / 100.0
 	$HBoxContainer/Enjoy.percentage = arg1['fun_param'] / 100.0
+	energy_level = arg1['sleep_param']
 
 
 func _on_texture_button_button_down():

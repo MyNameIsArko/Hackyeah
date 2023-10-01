@@ -63,14 +63,14 @@ func food_status() -> int:
 		return 0
 
 
-func send_signal() -> void:
+func get_signals() -> Dictionary:
 	var params_dict = {
-		"food_param" = food_param / 100,
-		"sleep_param" = sleep_param / 100,
-		"fun_param" = fun_param / 100
+		"food_param" = food_param,
+		"sleep_param" = sleep_param,
+		"fun_param" = fun_param
 		}
 	
-	player_params.emit(params_dict)
+	return params_dict
 	
 func _process(_delta):
 	if sleep_param <= 0:

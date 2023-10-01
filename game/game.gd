@@ -5,6 +5,8 @@ var time_file = "user://time.save"
 @onready var dinosaur = $Dinosaur
 @onready var timer = $Timer
 
+var game_state
+
 signal dino_params
 
 # Called when the node enters the scene tree for the first time.
@@ -51,6 +53,7 @@ func _ready():
 	
 func _process(delta):
 		dinosaur.food_status()
+		print(game_state)
 
 func _on_timer_timeout():
 	dinosaur.be_hungry()
@@ -64,3 +67,7 @@ func _notification(what):
 		file.store_var(Time.get_datetime_dict_from_system())
 		file.store_var(dinosaur.sleep_param)
 		file.close()
+
+
+func _on_ui_game_state(arg1):
+	game_state = arg1

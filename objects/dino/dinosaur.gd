@@ -3,6 +3,7 @@ extends CharacterBody2D
 const nametag: String = 'dino'
 
 var is_mouse_tracked = false
+var game_state
 
 var food_param: float = 100.0
 var sleep_param: float = 100.0
@@ -73,7 +74,7 @@ func get_signals() -> Dictionary:
 func _process(_delta):
 	if sleep_param <= 0:
 		return
-	if is_mouse_tracked and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if is_mouse_tracked and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and game_state == 0:
 		$AnimatedSprite2D.play("pat")
 		if not $PatAudio.playing:
 			$PatAudio.play()
@@ -88,3 +89,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	is_mouse_tracked = false
+
+
+func _on_game_dino_params(arg1):
+	game_state = arg1

@@ -13,3 +13,4 @@ res://objects/ui/food_objects/food_item_right.gd
 res://objects/ui/food_objects/food_item_right.tscn
 res://objects/ui/food_objects/MidButton.gd
 res://objects/ui/food_objects/RightButton.gd
+res://objects/ui/ui.gd

@@ -11,4 +11,5 @@ script = ExtResource("1_wtj2w")
 
 [node name="Game" parent="." instance=ExtResource("1_kapkj")]
 
+[connection signal="game_state" from="UI" to="Game" method="_on_ui_game_state"]
 [connection signal="dino_params" from="Game" to="UI" method="_on_game_dino_params"]

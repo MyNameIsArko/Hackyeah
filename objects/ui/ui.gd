@@ -9,6 +9,8 @@ enum GameState {
 
 var state = GameState.IDLE
 
+signal game_state(arg1)
+
 var past_user_inputs = []
 var generated_responses = []
 var endpoint_url = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-large"
@@ -29,6 +31,9 @@ func _ready():
 	ask_chatbot("I want you to act as a dinosaur in the childs game. They can take care of you. You need to get into this role very seriously. You can only answer very simple")
 	set_process(true)
 	$HBoxContainer2.visible = true
+	
+func _process(delta):
+	emit_signal("game_state", state)
 
 
 func _on_request_completed(result, response_code, headers, body):

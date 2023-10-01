@@ -20,7 +20,10 @@ var is_initial_prompt = true
 var last_prompt = ""
 
 func ask_chatbot(text):
-	var data = JSON.stringify({"inputs": {"text": text, "past_user_inputs": past_user_inputs, "generated_responses": generated_responses}})
+	var data = JSON.stringify({
+		"inputs": {"text": text, "past_user_inputs": past_user_inputs, "generated_responses": generated_responses},
+		"options": {"wait_for_model": true}
+		})
 	last_prompt = text
 	$Input.editable = false
 	$HTTPRequest.request(endpoint_url, headers, HTTPClient.METHOD_POST, data)
@@ -38,9 +41,6 @@ func _process(delta):
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
-	if 'error' in json:
-		ask_chatbot(last_prompt)
-		return
 	var chat_text = json['generated_text']
 	generated_responses.append(chat_text)
 	$Input.editable = true
@@ -89,3 +89,4 @@ func _on_cancel_button_button_down():
 			$AnimationPlayer.play("play_slide_in", -1, -1, true)
 		GameState.FEEDING:
 			$AnimationPlayer.play("food_slide_in", -1, -1, true)
+	state = GameState.IDLE

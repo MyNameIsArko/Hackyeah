@@ -52,8 +52,8 @@ func _ready():
 
 	
 func _process(delta):
-		dinosaur.food_status()
-		print(game_state)
+	dinosaur.food_status()
+	dinosaur.game_state = game_state
 
 func _on_timer_timeout():
 	dinosaur.be_hungry()

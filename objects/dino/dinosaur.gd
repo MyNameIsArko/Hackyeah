@@ -89,7 +89,3 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	is_mouse_tracked = false
-
-
-func _on_game_dino_params(arg1):
-	game_state = arg1

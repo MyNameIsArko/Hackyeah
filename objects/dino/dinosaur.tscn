@@ -1,55 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://dlc3t3xbvj0qs"]
+[gd_scene load_steps=18 format=3 uid="uid://dlc3t3xbvj0qs"]
 
 [ext_resource type="Script" path="res://objects/dino/dinosaur.gd" id="1_cxywc"]
-[ext_resource type="Texture2D" uid="uid://cc7r0uf0r326r" path="res://sprites/oddychanie.png" id="2_m0tkn"]
 [ext_resource type="Texture2D" uid="uid://dieos5an3k77y" path="res://sprites/patpatpat.png" id="3_72ggf"]
 [ext_resource type="Texture2D" uid="uid://btu1r1h7wb1xq" path="res://sprites/sleep.png" id="4_i5krd"]
 [ext_resource type="AudioStream" uid="uid://n3y3gpevv2br" path="res://sounds/drapanie.mp3" id="5_a2nqg"]
-[ext_resource type="AudioStream" uid="uid://px28mp2hwcbi" path="res://sounds/jedzenie.mp3" id="6_l4s74"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wfn16"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(0, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0fn55"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(2480, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_obbgm"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(4960, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3vly1"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(7440, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfnln"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(9920, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_loqer"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(12400, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ear3k"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(14880, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ydmwr"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(17360, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwu8k"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(19840, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tor7k"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(22320, 0, 2480, 3508)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pvnca"]
-atlas = ExtResource("2_m0tkn")
-region = Rect2(24800, 0, 2480, 3508)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mre68"]
 atlas = ExtResource("3_72ggf")
@@ -97,40 +51,7 @@ region = Rect2(19840, 0, 2480, 3508)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s2rye"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wfn16")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0fn55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_obbgm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3vly1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfnln")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_loqer")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ear3k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ydmwr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lwu8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tor7k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pvnca")
-}],
+"frames": [],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
@@ -201,7 +122,6 @@ shape = SubResource("RectangleShape2D_67gna")
 stream = ExtResource("5_a2nqg")
 
 [node name="EatAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_l4s74")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

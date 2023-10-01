@@ -37,7 +37,7 @@ func _ready():
 	
 func _process(delta):
 	emit_signal("game_state", state)
-
+	
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
@@ -58,9 +58,9 @@ func _on_input_text_submitted(new_text):
 	
 	
 func _on_game_dino_params(arg1):
-	$HBoxContainer/Stat.percentage = arg1['food_param'] / 100.0
-	$HBoxContainer/Stat2.percentage = arg1['sleep_param'] / 100.0
-	$HBoxContainer/Stat3.percentage = arg1['fun_param'] / 100.0
+	$HBoxContainer/Food.percentage = arg1['food_param'] / 100.0
+	$HBoxContainer/Sleep.percentage = arg1['sleep_param'] / 100.0
+	$HBoxContainer/Enjoy.percentage = arg1['fun_param'] / 100.0
 
 
 func _on_texture_button_button_down():

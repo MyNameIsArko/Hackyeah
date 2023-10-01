@@ -183,7 +183,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wyw85")
 }],
-"loop": true,
+"loop": false,
 "name": &"eat",
 "speed": 7.0
 }, {

@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7uspnsem7qlp"]
 
-[ext_resource type="Script" path="res://objects/ui/food_objects/food_item_mid.gd" id="1_yosae"]
+[ext_resource type="Script" path="res://objects/ui/food_objects/food_item.gd" id="1_ato8n"]
 [ext_resource type="Texture2D" uid="uid://cerwni42qhnnu" path="res://sprites/food2.png" id="2_bkdni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xi6ar"]
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_yosae")
+script = ExtResource("1_ato8n")
+food_amount = 10
+fun_amount = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 99

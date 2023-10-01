@@ -11,7 +11,6 @@ signal dino_params
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("Timer start")
 	set_process(true)
 	
 	if not FileAccess.file_exists(time_file):
